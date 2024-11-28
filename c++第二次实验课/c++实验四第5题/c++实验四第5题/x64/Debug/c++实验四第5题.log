@@ -1,0 +1,4 @@
+﻿  c++实验四第5题.cpp
+D:\c\code\c++实验四第5题\c++实验四第5题\c++实验四第5题.cpp(6,14): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\c\code\c++实验四第5题\c++实验四第5题\c++实验四第5题.cpp(7,14): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  c++实验四第5题.vcxproj -> D:\c\code\c++实验四第5题\x64\Debug\c++实验四第5题.exe
