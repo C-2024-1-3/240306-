@@ -1,34 +1,35 @@
 #include <iostream>
-#include <cctype>  
-#include <cstring>  
 using namespace std;
-void count(const char s[], int counts[]);
+const int num1 = 26;
+const int num2 = 99; 
 
-int main() {
-    const int NUM_LETTERS = 26;  // 字母表中的字母数量
-    int letterCounts[NUM_LETTERS] = { 0 };  
-    char input[1000];  
-    cout << "请输入一个字符串: ";
-    cin.getline(input, sizeof(input));  // 使用getline读取一行，包括空格
-    count(input, letterCounts);
-    for (int i = 0; i < NUM_LETTERS; ++i) 
-    {
-        if (letterCounts[i] > 0) 
-        {
-            cout << static_cast<char>('a' + i) << ": " << letterCounts[i] << endl;
-        }
-    }
-
-    return 0;
-}
-void count(const char s[], int counts[]) 
+void countLetters(const char list[], int counts[])
 {
-    for (int i = 0; i < strlen(s); ++i) 
-    { 
-        if (isalpha(s[i])) 
-        { 
-            int index = tolower(s[i]) - 'a';  // 将字符转换成小写并计算索引
-            counts[index]++;
-        }
-    }
+	for (int i = 0; i < num1; i++)
+		counts[i] = 0;
+	for (int j = 0; j < num2; j++)
+	{
+		counts[list[j] - 'a']++;
+		counts[list[j] - 'A']++;
+	}
+}
+void displayCounts(const int counts[])
+{
+	for (int i = 0; i < num1; i++) 
+	{
+		if (counts[i] != 0)
+			cout << static_cast<char>(i + 'a') << " : " << counts[i] << "  times " << endl;
+	}
+}
+
+int main()
+{
+	char list[num2];
+	int counts[num1];
+	cout << "输入一串字符: ";
+	cin.getline(list, num2);
+	countLetters(list, counts);
+	displayCounts(counts);
+
+	return 0;
 }

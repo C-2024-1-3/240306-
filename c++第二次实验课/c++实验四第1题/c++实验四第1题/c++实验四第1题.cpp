@@ -1,22 +1,30 @@
-#include <iostream>
-#include <vector>
+#include<iostream>
 using namespace std;
-int main() 
+int main()
 {
-    vector<int> uNumbers; 
-    int num;
-    cout << "请输入10个整数：" << endl;
-    for (int i = 0; i < 10; ++i) {
-        cin >> num;        
-        if (find(uNumbers.begin(), uNumbers.end(), num) == uNumbers.end()) 
-        {
-            uNumbers.push_back(num);
-        }
-    }  
-    cout << "新数组为：" << endl;
-    for (int n : uNumbers) {
-        cout << n <<" ";
-    }
+	const int size = 10;
+	int list[size];
+	cout << "请输入10个数 : " << endl;
+	for (int i = 0; i < size; i++)
+		cin >> list[i];
+	cout << list[0] << " ";
+	for (int m = 1; m < size; m++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			if (list[m] != list[j])
+			{
+				if (j == m - 1)
+					cout << list[m] << " ";
+				else
+					continue;
+			}
+			else
+				break;
+		}
+	}
 
-    return 0;
+	cout << endl;
+
+	return 0;
 }
